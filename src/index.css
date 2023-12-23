@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .btm-nav > * {
     opacity: 0.5;
     transition: opacity 300ms ease-in-out;
@@ -13,4 +12,13 @@
     --tw-bg-opacity: 1;
     opacity: 1;
     background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+}
+
+.slick-list {
+    overflow: visible;
+}
+
+.slick-track {
+    display: flex;
+    gap: 0.5rem;
 }
