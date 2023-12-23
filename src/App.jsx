@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Events from "./components/Events/Events";
 import Friends from "./components/Friends/Friends";
+import Error404 from "./components/Error404/Error404";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/friends" element={<Friends />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </main>
       <BottomNavBar />
