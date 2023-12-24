@@ -2,6 +2,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import EventCard from "./EventCard";
+import AddEventsForm from "./EventsForm/AddEventsForm";
+import UpdateEventsForm from "./EventsForm/UpdateEventsForm";
 
 function Events() {
   const settings = {
@@ -14,9 +16,37 @@ function Events() {
     arrows: false,
   };
 
+  const handleAddEventForm = () => {
+    document.getElementById("my_modal_2").showModal();
+  };
+
+  const hanldeUpdateEventForm = () => {
+    document.getElementById("my_custom_modal_2").showModal();
+  }
+
   return (
-    <div className="overflow-hidden min-h-screen pb-[1]">
-      <h2 className="text-2xl font-bold">My Events 🎉</h2>
+    <div className="overflow-hidden pb-[1]">
+      <div className="flex justify-between items-center">
+        <h2 className="text-2xl font-bold">My Events 🎉</h2>
+        <div>
+          <button onClick={handleAddEventForm}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
       <Slider {...settings}>
         <EventCard
           Image={
@@ -25,6 +55,7 @@ function Events() {
           Title={"Birthday Party"}
           Description={"Birthday Party at my house"}
           Location={"Drive street New York, NY 10001"}
+          hanldeUpdateEventForm={hanldeUpdateEventForm}
         />
         <EventCard
           Image={
@@ -54,6 +85,8 @@ function Events() {
           Location={"Oceanside, NY 11572"}
         />
       </Slider>
+      <AddEventsForm />
+      <UpdateEventsForm />
     </div>
   );
 }

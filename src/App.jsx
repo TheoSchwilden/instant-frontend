@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-[7rem] px-5">
+      <main className="pt-[7rem] pb-[64px] px-5">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />

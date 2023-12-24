@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function EventCard({ Image, Title, Description, Location }) {
+function EventCard({ Image, Title, Description, Location, hanldeUpdateEventForm }) {
   console.log(Image);
   return (
     <div className="card bg-base-200 shadow-xl image-full mt-8">
@@ -32,6 +32,7 @@ function EventCard({ Image, Title, Description, Location }) {
               strokeWidth="1.5"
               stroke="currentColor"
               className="w-6 h-6"
+              onClick={hanldeUpdateEventForm}
             >
               <path
                 strokeLinecap="round"
@@ -101,4 +102,5 @@ EventCard.propTypes = {
   Title: PropTypes.string.isRequired,
   Description: PropTypes.string.isRequired,
   Location: PropTypes.string.isRequired,
+  hanldeUpdateEventForm: PropTypes.func.isRequired,
 };
